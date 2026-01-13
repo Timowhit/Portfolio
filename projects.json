@@ -11,9 +11,9 @@
       "name": "Careers Portfolio",
       "description": "Repository of career successes and resources including Project Displays, Demos, and Resume Catalogs.",
       "tags": ["HTML", "CSS", "Portfolio"],
-      "liveUrl": "https://timowhit.github.io/Careers/",
+      "liveUrl": "https://timowhit.github.io/Careers/repository/index.html",
       "repoUrl": "https://github.com/Timowhit/Careers",
-      "sourceFile": "https://raw.githubusercontent.com/Timowhit/Careers/repository/index.html",
+      "sourceFile": "https://raw.githubusercontent.com/Timowhit/Careers/refs/heads/repository/index.html",
       "color": "#e63946"
     },
     {
@@ -23,7 +23,7 @@
       "tags": ["Python", "Trading", "Automation"],
       "liveUrl": "https://github.com/Timowhit/Trading-Bot",
       "repoUrl": "https://github.com/Timowhit/Trading-Bot",
-      "sourceFile": "https://raw.githubusercontent.com/Timowhit/Trading-Bot/Trading_Bot_Dashboard.py",
+      "sourceFile": "https://raw.githubusercontent.com/Timowhit/Trading-Bot/refs/heads/Trading_Bot_Dashboard.py",
       "color": "#2a9d8f"
     },
     {
@@ -77,7 +77,7 @@
       "type": "web",
       "liveUrl": "https://timowhit.github.io/wdd130/wwr/rafting_website.html",
       "repoUrl": "https://github.com/Timowhit/wdd130",
-      "sourceFile": "https://raw.githubusercontent.com/Timowhit/wdd130/wwr/rafting_website.html",
+      "sourceFile": "https://raw.githubusercontent.com/Timowhit/wdd130/refs/heads/wwr/rafting_website.html",
       "color": "#3a86ff"
     },
     {
@@ -88,7 +88,7 @@
       "type": "csharp",
       "liveUrl": "https://github.com/Timowhit/cse210/week02/journal/",
       "repoUrl": "https://github.com/Timowhit/cse210",
-      "sourceFile": "https://raw.githubusercontent.com/Timowhit/cse210/week02/journal/Program.cs",
+      "sourceFile": "https://raw.githubusercontent.com/Timowhit/cse210/refs/heads/week02/journal/Program.cs",
       "color": "#06d6a0"
     },
     {
@@ -99,7 +99,7 @@
       "type": "python",
       "liveUrl": "https://github.com/Timowhit/cse111/project/test_runner.py",
       "repoUrl": "https://github.com/Timowhit/cse111",
-      "sourceFile": "https://raw.githubusercontent.com/Timowhit/cse111/project/test_runner.py",
+      "sourceFile": "https://raw.githubusercontent.com/Timowhit/cse111/refs/heads/project/test_runner.py",
       "color": "#ff006e"
     },
     {
@@ -110,7 +110,7 @@
       "type": "python",
       "liveUrl": "https://github.com/Timowhit/Intro-to-Programming-Classwork/Coding_Class_Work/Generate_Badge_ID.py",
       "repoUrl": "https://github.com/Timowhit/Intro-to-Programming-Classwork",
-      "sourceFile": "https://raw.githubusercontent.com/Timowhit/Intro-to-Programming-Classwork/Coding_Class_Work/Generate_Badge_ID.py",
+      "sourceFile": "https://raw.githubusercontent.com/Timowhit/Intro-to-Programming-Classwork/refs/heads/Coding_Class_Work/Generate_Badge_ID.py",
       "color": "#fb5607"
     },
     {
