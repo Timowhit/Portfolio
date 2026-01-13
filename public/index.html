@@ -686,11 +686,11 @@
       }
 
       async init() {
-        await this.loadProjects();
-        this.setupElements();
-        this.setupEventListeners();
-        this.showProject(0);
-        this.startAutoPlay();
+      this.setupElements();
+      await this.loadProjects();
+      this.setupEventListeners();
+      this.showProject(0);
+      this.startAutoPlay();
       }
 
       async loadProjects() {
