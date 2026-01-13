@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timothy A. Whitehead | Portfolio</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Prism.js for syntax highlighting -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-primary: #0a0a0b;
+      --bg-secondary: #111113;
+      --bg-tertiary: #1a1a1d;
+      --text-primary: #fafafa;
+      --text-secondary: #888;
+      --text-muted: #555;
+      --accent: #00ff88;
+      --accent-dim: rgba(0, 255, 136, 0.1);
+      --border: rgba(255, 255, 255, 0.08);
+      --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      --carousel-duration: 8000;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Space Mono', monospace;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Noise texture overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      opacity: 0.03;
+      pointer-events: none;
+      z-index: 1000;
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 1.5rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(to bottom, var(--bg-primary), transparent);
+    }
+
+    .logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 1.5rem;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.2); }
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 40vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 8rem 3rem 3rem;
+      position: relative;
+    }
+
+    .hero-content {
+      max-width: 800px;
+    }
+
+    .hero-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      opacity: 0;
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    .hero-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2.5rem, 8vw, 5rem);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeInUp 0.6s ease 0.1s forwards;
+    }
+
+    .hero-title span {
+      display: block;
+      background: linear-gradient(90deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-description {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      max-width: 500px;
+      opacity: 0;
+      animation: fadeInUp 0.6s ease 0.2s forwards;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Carousel Section */
+    .carousel-section {
+      padding: 3rem;
+      min-height: 80vh;
+    }
+
+    .carousel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    .carousel-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .carousel-controls {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .carousel-btn {
+      width: 48px;
+      height: 48px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text-primary);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      font-size: 1.2rem;
+    }
+
+    .carousel-btn:hover {
+      background: var(--accent);
+      color: var(--bg-primary);
+      border-color: var(--accent);
+    }
+
+    .play-pause-btn {
+      width: 48px;
+      height: 48px;
+      border: 1px solid var(--accent);
+      background: var(--accent-dim);
+      color: var(--accent);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+    }
+
+    .play-pause-btn.playing {
+      background: var(--accent);
+      color: var(--bg-primary);
+    }
+
+    /* Progress Bar */
+    .progress-container {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .progress-segment {
+      flex: 1;
+      height: 3px;
+      background: var(--border);
+      position: relative;
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+    .progress-segment::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 0%;
+      background: var(--accent);
+      transition: width 0.1s linear;
+    }
+
+    .progress-segment.active::after {
+      animation: progressFill var(--carousel-duration) linear forwards;
+    }
+
+    .progress-segment.completed::after {
+      width: 100%;
+    }
+
+    .progress-segment.paused::after {
+      animation-play-state: paused;
+    }
+
+    @keyframes progressFill {
+      from { width: 0%; }
+      to { width: 100%; }
+    }
+
+    /* Main Carousel Content */
+    .carousel-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      min-height: 600px;
+    }
+
+    /* Preview Panel */
+    .preview-panel {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .preview-header {
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--bg-tertiary);
+    }
+
+    .preview-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .preview-meta {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .tag {
+      font-size: 0.7rem;
+      padding: 0.25rem 0.5rem;
+      background: var(--accent-dim);
+      color: var(--accent);
+      border-radius: 2px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .iframe-container {
+      flex: 1;
+      position: relative;
+      background: #fff;
+    }
+
+    .iframe-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .iframe-loading {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    .preview-footer {
+      padding: 1rem 1.5rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--bg-tertiary);
+    }
+
+    .preview-description {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      max-width: 70%;
+      line-height: 1.5;
+    }
+
+    .preview-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      transition: gap 0.3s ease;
+    }
+
+    .preview-link:hover {
+      gap: 0.75rem;
+    }
+
+    /* Code Panel */
+    .code-panel {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .code-header {
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--bg-tertiary);
+    }
+
+    .code-filename {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .code-filename::before {
+      content: '';
+      width: 12px;
+      height: 12px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+
+    .code-actions {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .code-btn {
+      padding: 0.4rem 0.8rem;
+      font-size: 0.75rem;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text-secondary);
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      transition: all 0.3s ease;
+      font-family: 'Space Mono', monospace;
+    }
+
+    .code-btn:hover {
+      background: var(--accent);
+      color: var(--bg-primary);
+      border-color: var(--accent);
+    }
+
+    .code-content {
+      flex: 1;
+      overflow: auto;
+      padding: 1.5rem;
+      font-size: 0.8rem;
+      line-height: 1.6;
+    }
+
+    .code-content pre {
+      margin: 0;
+      background: transparent !important;
+    }
+
+    .code-content code {
+      font-family: 'Space Mono', monospace !important;
+      font-size: 0.8rem !important;
+    }
+
+    /* Project Info Overlay */
+    .project-number {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-family: 'Syne', sans-serif;
+      font-size: 5rem;
+      font-weight: 800;
+      color: var(--accent);
+      opacity: 0.1;
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    /* Footer */
+    footer {
+      padding: 3rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 4rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .footer-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+
+    .footer-credit {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .carousel-content {
+        grid-template-columns: 1fr;
+      }
+      
+      .preview-panel, .code-panel {
+        min-height: 400px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 1rem 1.5rem;
+      }
+      
+      .nav-links {
+        display: none;
+      }
+      
+      .hero {
+        padding: 6rem 1.5rem 2rem;
+      }
+      
+      .carousel-section {
+        padding: 1.5rem;
+      }
+      
+      footer {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--bg-secondary);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--border);
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="/" class="logo">
+      <span class="logo-dot"></span>
+      TAW
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="https://github.com/timowhit" target="_blank">GitHub</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <p class="hero-label">Web Developer</p>
+        <h1 class="hero-title">
+          <span>Timothy A.</span>
+          <span>Whitehead</span>
+        </h1>
+        <p class="hero-description">
+          Building the web, one project at a time. Explore my work through live demos and source code.
+        </p>
+      </div>
+    </section>
+
+    <section class="carousel-section" id="projects">
+      <div class="carousel-header">
+        <span class="carousel-title">Featured Projects</span>
+        <div class="carousel-controls">
+          <button class="carousel-btn" id="prevBtn" aria-label="Previous project">←</button>
+          <button class="play-pause-btn playing" id="playPauseBtn" aria-label="Pause carousel">❚❚</button>
+          <button class="carousel-btn" id="nextBtn" aria-label="Next project">→</button>
+        </div>
+      </div>
+
+      <div class="progress-container" id="progressContainer">
+        <!-- Progress segments will be added dynamically -->
+      </div>
+
+      <div class="carousel-content">
+        <div class="preview-panel">
+          <div class="project-number" id="projectNumber">01</div>
+          <div class="preview-header">
+            <span class="preview-title" id="previewTitle">Loading...</span>
+            <div class="preview-meta" id="previewTags">
+              <!-- Tags will be added dynamically -->
+            </div>
+          </div>
+          <div class="iframe-container">
+            <div class="iframe-loading">Loading preview...</div>
+            <iframe id="previewIframe" title="Project preview" sandbox="allow-scripts allow-same-origin"></iframe>
+          </div>
+          <div class="preview-footer">
+            <p class="preview-description" id="previewDescription">
+              Loading project description...
+            </p>
+            <a href="#" class="preview-link" id="liveLink" target="_blank">
+              View Live <span>→</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="code-panel">
+          <div class="code-header">
+            <span class="code-filename" id="codeFilename">index.html</span>
+            <div class="code-actions">
+              <button class="code-btn" id="copyBtn">Copy</button>
+              <a href="#" class="code-btn" id="repoLink" target="_blank">Repo</a>
+            </div>
+          </div>
+          <div class="code-content">
+            <pre><code class="language-html" id="codeDisplay">// Loading source code...</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="footer-links">
+      <a href="https://github.com/timowhit" target="_blank">GitHub</a>
+      <a href="mailto:contact@example.com">Email</a>
+      <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+    </div>
+    <p class="footer-credit">© 2025 Timothy A. Whitehead. Built with passion.</p>
+  </footer>
+
+  <!-- Prism.js for syntax highlighting -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-css.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+
+  <script>
+    class ProjectCarousel {
+      constructor() {
+        this.projects = [];
+        this.currentIndex = 0;
+        this.isPlaying = true;
+        this.timer = null;
+        this.duration = 8000; // 8 seconds per project
+        
+        this.init();
+      }
+
+      async init() {
+        await this.loadProjects();
+        this.setupElements();
+        this.setupEventListeners();
+        this.showProject(0);
+        this.startAutoPlay();
+      }
+
+      async loadProjects() {
+        try {
+          const response = await fetch('/api/projects');
+          const data = await response.json();
+          this.projects = data.projects;
+          
+          // Update author info
+          document.querySelector('.hero-title span:first-child').textContent = data.author.name.split(' ')[0] + ' ' + data.author.name.split(' ')[1].charAt(0) + '.';
+          document.querySelector('.hero-title span:last-child').textContent = data.author.name.split(' ').slice(-1)[0];
+          document.querySelector('.hero-description').textContent = data.author.tagline;
+          
+          // Create progress segments
+          this.createProgressSegments();
+        } catch (error) {
+          console.error('Failed to load projects:', error);
+          // Fallback projects for demo
+          this.projects = [
+            {
+              id: 'demo',
+              name: 'Demo Project',
+              description: 'Configure your projects in projects.json',
+              tags: ['HTML', 'CSS'],
+              liveUrl: 'https://example.com',
+              repoUrl: 'https://github.com',
+              sourceFile: '',
+              color: '#00ff88'
+            }
+          ];
+          this.createProgressSegments();
+        }
+      }
+
+      setupElements() {
+        this.elements = {
+          previewTitle: document.getElementById('previewTitle'),
+          previewTags: document.getElementById('previewTags'),
+          previewDescription: document.getElementById('previewDescription'),
+          previewIframe: document.getElementById('previewIframe'),
+          liveLink: document.getElementById('liveLink'),
+          repoLink: document.getElementById('repoLink'),
+          codeFilename: document.getElementById('codeFilename'),
+          codeDisplay: document.getElementById('codeDisplay'),
+          projectNumber: document.getElementById('projectNumber'),
+          progressContainer: document.getElementById('progressContainer'),
+          prevBtn: document.getElementById('prevBtn'),
+          nextBtn: document.getElementById('nextBtn'),
+          playPauseBtn: document.getElementById('playPauseBtn'),
+          copyBtn: document.getElementById('copyBtn')
+        };
+      }
+
+      setupEventListeners() {
+        this.elements.prevBtn.addEventListener('click', () => this.prev());
+        this.elements.nextBtn.addEventListener('click', () => this.next());
+        this.elements.playPauseBtn.addEventListener('click', () => this.togglePlayPause());
+        this.elements.copyBtn.addEventListener('click', () => this.copyCode());
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'ArrowLeft') this.prev();
+          if (e.key === 'ArrowRight') this.next();
+          if (e.key === ' ') {
+            e.preventDefault();
+            this.togglePlayPause();
+          }
+        });
+      }
+
+      createProgressSegments() {
+        this.elements.progressContainer.innerHTML = '';
+        this.projects.forEach((_, index) => {
+          const segment = document.createElement('div');
+          segment.className = 'progress-segment';
+          segment.addEventListener('click', () => this.goTo(index));
+          this.elements.progressContainer.appendChild(segment);
+        });
+      }
+
+      async showProject(index) {
+        const project = this.projects[index];
+        if (!project) return;
+
+        // Update UI
+        this.elements.previewTitle.textContent = project.name;
+        this.elements.previewDescription.textContent = project.description;
+        this.elements.liveLink.href = project.liveUrl;
+        this.elements.repoLink.href = project.repoUrl;
+        this.elements.projectNumber.textContent = String(index + 1).padStart(2, '0');
+        
+        // Update tags
+        this.elements.previewTags.innerHTML = project.tags
+          .map(tag => `<span class="tag">${tag}</span>`)
+          .join('');
+
+        // Update iframe
+        this.elements.previewIframe.src = project.liveUrl;
+
+        // Fetch and display source code
+        await this.loadSourceCode(project.sourceFile);
+
+        // Update progress
+        this.updateProgress(index);
+        
+        // Update CSS variable for project color
+        document.documentElement.style.setProperty('--accent', project.color || '#00ff88');
+      }
+
+      async loadSourceCode(url) {
+        if (!url) {
+          this.elements.codeDisplay.textContent = '// No source file configured';
+          this.elements.codeFilename.textContent = 'No file';
+          return;
+        }
+
+        try {
+          const response = await fetch(`/api/github-file?url=${encodeURIComponent(url)}`);
+          const code = await response.text();
+          
+          // Extract filename from URL
+          const filename = url.split('/').pop();
+          this.elements.codeFilename.textContent = filename;
+          
+          // Determine language from extension
+          const ext = filename.split('.').pop();
+          const langMap = {
+            'html': 'html',
+            'htm': 'html',
+            'js': 'javascript',
+            'jsx': 'javascript',
+            'ts': 'javascript',
+            'css': 'css',
+            'py': 'python',
+            'json': 'javascript'
+          };
+          const lang = langMap[ext] || 'markup';
+          
+          this.elements.codeDisplay.className = `language-${lang}`;
+          this.elements.codeDisplay.textContent = code;
+          
+          // Re-highlight
+          Prism.highlightElement(this.elements.codeDisplay);
+        } catch (error) {
+          console.error('Failed to load source code:', error);
+          this.elements.codeDisplay.textContent = '// Failed to load source code';
+        }
+      }
+
+      updateProgress(index) {
+        const segments = this.elements.progressContainer.querySelectorAll('.progress-segment');
+        segments.forEach((segment, i) => {
+          segment.classList.remove('active', 'completed', 'paused');
+          if (i < index) {
+            segment.classList.add('completed');
+          } else if (i === index) {
+            segment.classList.add('active');
+            if (!this.isPlaying) {
+              segment.classList.add('paused');
+            }
+          }
+        });
+      }
+
+      startAutoPlay() {
+        this.stopAutoPlay();
+        if (!this.isPlaying) return;
+        
+        this.timer = setTimeout(() => {
+          this.next();
+        }, this.duration);
+      }
+
+      stopAutoPlay() {
+        if (this.timer) {
+          clearTimeout(this.timer);
+          this.timer = null;
+        }
+      }
+
+      togglePlayPause() {
+        this.isPlaying = !this.isPlaying;
+        this.elements.playPauseBtn.textContent = this.isPlaying ? '❚❚' : '▶';
+        this.elements.playPauseBtn.classList.toggle('playing', this.isPlaying);
+        
+        const activeSegment = this.elements.progressContainer.querySelector('.active');
+        if (activeSegment) {
+          activeSegment.classList.toggle('paused', !this.isPlaying);
+        }
+        
+        if (this.isPlaying) {
+          this.startAutoPlay();
+        } else {
+          this.stopAutoPlay();
+        }
+      }
+
+      next() {
+        this.currentIndex = (this.currentIndex + 1) % this.projects.length;
+        this.showProject(this.currentIndex);
+        this.startAutoPlay();
+      }
+
+      prev() {
+        this.currentIndex = (this.currentIndex - 1 + this.projects.length) % this.projects.length;
+        this.showProject(this.currentIndex);
+        this.startAutoPlay();
+      }
+
+      goTo(index) {
+        this.currentIndex = index;
+        this.showProject(index);
+        this.startAutoPlay();
+      }
+
+      copyCode() {
+        const code = this.elements.codeDisplay.textContent;
+        navigator.clipboard.writeText(code).then(() => {
+          const btn = this.elements.copyBtn;
+          btn.textContent = 'Copied!';
+          setTimeout(() => {
+            btn.textContent = 'Copy';
+          }, 2000);
+        });
+      }
+    }
+
+    // Initialize carousel when DOM is ready
+    document.addEventListener('DOMContentLoaded', () => {
+      new ProjectCarousel();
+    });
+  </script>
+</body>
+</html>

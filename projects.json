@@ -1,0 +1,50 @@
+{
+  "author": {
+    "name": "Timothy A. Whitehead",
+    "title": "Web Developer",
+    "github": "https://github.com/timowhit",
+    "tagline": "Building the web, one project at a time"
+  },
+  "projects": [
+    {
+      "id": "careers",
+      "name": "Careers Portfolio",
+      "description": "Repository of career successes and resources including Project Displays, Demos, and Resume Catalogs.",
+      "tags": ["HTML", "CSS", "Portfolio"],
+      "liveUrl": "https://timowhit.github.io/Careers/",
+      "repoUrl": "https://github.com/Timowhit/Careers",
+      "sourceFile": "https://raw.githubusercontent.com/Timowhit/Careers/main/index.html",
+      "color": "#e63946"
+    },
+    {
+      "id": "wdd131",
+      "name": "Dynamic Web Development",
+      "description": "Dynamic web page development course projects featuring JavaScript interactivity and modern web techniques.",
+      "tags": ["JavaScript", "HTML", "CSS"],
+      "liveUrl": "https://timowhit.github.io/wdd131/",
+      "repoUrl": "https://github.com/Timowhit/wdd131",
+      "sourceFile": "https://raw.githubusercontent.com/Timowhit/wdd131/main/index.html",
+      "color": "#2a9d8f"
+    },
+    {
+      "id": "project3",
+      "name": "Project Three",
+      "description": "Add your third project description here. Update the URLs to match your actual project.",
+      "tags": ["React", "Node.js"],
+      "liveUrl": "https://example.com",
+      "repoUrl": "https://github.com/Timowhit/project3",
+      "sourceFile": "https://raw.githubusercontent.com/Timowhit/project3/main/index.html",
+      "color": "#e9c46a"
+    },
+    {
+      "id": "project4",
+      "name": "Project Four",
+      "description": "Add your fourth project description here. Update the URLs to match your actual project.",
+      "tags": ["Python", "API"],
+      "liveUrl": "https://example.com",
+      "repoUrl": "https://github.com/Timowhit/project4",
+      "sourceFile": "https://raw.githubusercontent.com/Timowhit/project4/main/app.py",
+      "color": "#f4a261"
+    }
+  ]
+}
