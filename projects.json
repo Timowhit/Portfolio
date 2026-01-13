@@ -13,7 +13,7 @@
       "tags": ["HTML", "CSS", "Portfolio"],
       "liveUrl": "https://timowhit.github.io/Careers/",
       "repoUrl": "https://github.com/Timowhit/Careers",
-      "sourceFile": "https://raw.githubusercontent.com/Timowhit/Careers/main/index.html",
+      "sourceFile": "https://raw.githubusercontent.com/Timowhit/Careers/repository/index.html",
       "color": "#e63946"
     },
     {
@@ -23,18 +23,8 @@
       "tags": ["Python", "Trading", "Automation"],
       "liveUrl": "https://github.com/Timowhit/Trading-Bot",
       "repoUrl": "https://github.com/Timowhit/Trading-Bot",
-      "sourceFile": "https://raw.githubusercontent.com/Timowhit/Trading-Bot/main/main.py",
+      "sourceFile": "https://raw.githubusercontent.com/Timowhit/Trading-Bot/Trading_Bot_Dashboard.py",
       "color": "#2a9d8f"
-    },
-    {
-      "id": "swingtrader",
-      "name": "Swing Trader",
-      "description": "Swing trading application for identifying and capitalizing on medium-term market movements.",
-      "tags": ["Python", "Finance", "Analysis"],
-      "liveUrl": "https://github.com/Timowhit/SwingTrader",
-      "repoUrl": "https://github.com/Timowhit/SwingTrader",
-      "sourceFile": "https://raw.githubusercontent.com/Timowhit/SwingTrader/main/main.py",
-      "color": "#e9c46a"
     },
     {
       "id": "wdd231",
@@ -43,7 +33,7 @@
       "tags": ["JavaScript", "APIs", "CSS"],
       "liveUrl": "https://timowhit.github.io/wdd231/",
       "repoUrl": "https://github.com/Timowhit/wdd231",
-      "sourceFile": "https://raw.githubusercontent.com/Timowhit/wdd231/main/index.html",
+      "sourceFile": "https://raw.githubusercontent.com/Timowhit/wdd231/index.html",
       "color": "#f4a261"
     },
     {
@@ -53,7 +43,27 @@
       "tags": ["JavaScript", "HTML", "CSS"],
       "liveUrl": "https://timowhit.github.io/wdd131/",
       "repoUrl": "https://github.com/Timowhit/wdd131",
-      "sourceFile": "https://raw.githubusercontent.com/Timowhit/wdd131/main/index.html",
+      "sourceFile": "https://raw.githubusercontent.com/Timowhit/wdd131/index.html",
+      "color": "#8338ec"
+    },
+    {
+      "id": "wdd131",
+      "name": "WDD 131 - Dynamic Web Dev",
+      "description": "Dynamic web page development course projects featuring JavaScript interactivity and modern web techniques.",
+      "tags": ["JavaScript", "HTML", "CSS"],
+      "liveUrl": "https://timowhit.github.io/wdd131/",
+      "repoUrl": "https://github.com/Timowhit/wdd131",
+      "sourceFile": "https://raw.githubusercontent.com/Timowhit/wdd131/project/index.html",
+      "color": "#8338ec"
+    },
+    {
+      "id": "wdd131",
+      "name": "WDD 131 - Dynamic Web Dev",
+      "description": "Dynamic web page development course projects featuring JavaScript interactivity and modern web techniques.",
+      "tags": ["JavaScript", "HTML", "CSS"],
+      "liveUrl": "https://timowhit.github.io/wdd131/",
+      "repoUrl": "https://github.com/Timowhit/wdd131",
+      "sourceFile": "https://raw.githubusercontent.com/Timowhit/wdd131/form.html",
       "color": "#8338ec"
     },
     {
@@ -63,7 +73,7 @@
       "tags": ["HTML", "CSS", "Design"],
       "liveUrl": "https://timowhit.github.io/wdd130/",
       "repoUrl": "https://github.com/Timowhit/wdd130",
-      "sourceFile": "https://raw.githubusercontent.com/Timowhit/wdd130/main/index.html",
+      "sourceFile": "https://raw.githubusercontent.com/Timowhit/wdd130/rafting_website.html",
       "color": "#3a86ff"
     },
     {
@@ -73,7 +83,7 @@
       "tags": ["C#", "OOP", "Design Patterns"],
       "liveUrl": "https://github.com/Timowhit/cse210",
       "repoUrl": "https://github.com/Timowhit/cse210",
-      "sourceFile": "https://raw.githubusercontent.com/Timowhit/cse210/main/Program.cs",
+      "sourceFile": "https://raw.githubusercontent.com/Timowhit/cse210/week02/journal/Program.cs",
       "color": "#06d6a0"
     },
     {
@@ -83,7 +93,7 @@
       "tags": ["Python", "Functions", "Modules"],
       "liveUrl": "https://github.com/Timowhit/cse111",
       "repoUrl": "https://github.com/Timowhit/cse111",
-      "sourceFile": "https://raw.githubusercontent.com/Timowhit/cse111/main/main.py",
+      "sourceFile": "https://raw.githubusercontent.com/Timowhit/cse111/project/test_runner.py",
       "color": "#ff006e"
     },
     {
@@ -93,18 +103,18 @@
       "tags": ["Python", "Basics", "Learning"],
       "liveUrl": "https://github.com/Timowhit/Intro-to-Programming-Classwork",
       "repoUrl": "https://github.com/Timowhit/Intro-to-Programming-Classwork",
-      "sourceFile": "https://raw.githubusercontent.com/Timowhit/Intro-to-Programming-Classwork/main/main.py",
+      "sourceFile": "https://raw.githubusercontent.com/Timowhit/Intro-to-Programming-Classwork/Coding_Class_Work/Generate_Badge_ID.py",
       "color": "#fb5607"
     },
     {
-      "id": "portfolio",
-      "name": "Portfolio Site",
-      "description": "This very portfolio you're viewing - a carousel-based showcase of projects with live demos and source code.",
-      "tags": ["Node.js", "Express", "CSS"],
-      "liveUrl": "https://github.com/Timowhit/Portfolio",
-      "repoUrl": "https://github.com/Timowhit/Portfolio",
-      "sourceFile": "https://raw.githubusercontent.com/Timowhit/Portfolio/main/public/index.html",
-      "color": "#00ff88"
+      "id": "cse111",
+      "name": "CSE 111 - Programming with Functions",
+      "description": "Programming fundamentals course emphasizing functions, modules, and problem-solving with Python.",
+      "tags": ["Python", "Functions", "Modules"],
+      "liveUrl": "https://github.com/Timowhit/cse111",
+      "repoUrl": "https://github.com/Timowhit/cse111",
+      "sourceFile": "https://raw.githubusercontent.com/Timowhit/cse111/week02/passwords.py",
+      "color": "#ff006e"
     }
   ]
 }
