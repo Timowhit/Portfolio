@@ -33,7 +33,7 @@
       "tags": ["JavaScript", "APIs", "CSS"],
       "liveUrl": "https://timowhit.github.io/wdd231/",
       "repoUrl": "https://github.com/Timowhit/wdd231",
-      "sourceFile": "https://raw.githubusercontent.com/Timowhit/wdd231/index.html",
+      "sourceFile": "https://https://raw.githubusercontent.com/Timowhit/wdd231/refs/heads/main/index.html",
       "color": "#f4a261"
     },
     {
@@ -44,7 +44,7 @@
       "type": "web",
       "liveUrl": "https://timowhit.github.io/wdd131/",
       "repoUrl": "https://github.com/Timowhit/wdd131",
-      "sourceFile": "https://raw.githubusercontent.com/Timowhit/wdd131/index.html",
+      "sourceFile": "https://https://raw.githubusercontent.com/Timowhit/wdd131/refs/heads/wdd131/index.html",
       "color": "#8338ec"
     },
     {
@@ -53,9 +53,9 @@
       "description": "Dynamic web page development course projects featuring JavaScript interactivity and modern web techniques.",
       "tags": ["JavaScript", "HTML", "CSS"],
       "type": "web",
-      "liveUrl": "https://timowhit.github.io/wdd131/",
+      "liveUrl": "https://timowhit.github.io/wdd131/project/",
       "repoUrl": "https://github.com/Timowhit/wdd131",
-      "sourceFile": "https://raw.githubusercontent.com/Timowhit/wdd131/project/index.html",
+      "sourceFile": "https://https://raw.githubusercontent.com/Timowhit/wdd131/refs/heads/wdd131/project/index.html",
       "color": "#8338ec"
     },
     {
@@ -64,9 +64,9 @@
       "description": "Dynamic web page development course projects featuring JavaScript interactivity and modern web techniques.",
       "tags": ["JavaScript", "HTML", "CSS"],
       "type": "web",
-      "liveUrl": "https://timowhit.github.io/wdd131/",
+      "liveUrl": "https://timowhit.github.io/wdd131/form.html",
       "repoUrl": "https://github.com/Timowhit/wdd131",
-      "sourceFile": "https://raw.githubusercontent.com/Timowhit/wdd131/form.html",
+      "sourceFile": "https://https://raw.githubusercontent.com/Timowhit/wdd131/refs/heads/wdd131/form.html",
       "color": "#8338ec"
     },
     {
@@ -75,7 +75,7 @@
       "description": "Introduction to web development fundamentals including HTML structure, CSS styling, and page layout.",
       "tags": ["HTML", "CSS", "Design"],
       "type": "web",
-      "liveUrl": "https://timowhit.github.io/wdd130/",
+      "liveUrl": "https://timowhit.github.io/wdd130/rafting_website.html",
       "repoUrl": "https://github.com/Timowhit/wdd130",
       "sourceFile": "https://raw.githubusercontent.com/Timowhit/wdd130/rafting_website.html",
       "color": "#3a86ff"
@@ -121,7 +121,7 @@
       "type": "python",
       "liveUrl": "https://github.com/Timowhit/cse111",
       "repoUrl": "https://github.com/Timowhit/cse111",
-      "sourceFile": "https://raw.githubusercontent.com/Timowhit/cse111/week02/passwords.py",
+      "sourceFile": "https://https://raw.githubusercontent.com/Timowhit/cse111/refs/heads/cse111/week02/passwords.py",
       "color": "#ff006e"
     }
   ]
