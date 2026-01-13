@@ -31,6 +31,7 @@ npm start
 ### Deploy to Railway
 
 1. **Push to GitHub**
+
    ```bash
    git init
    git add .
@@ -81,7 +82,7 @@ Open `projects.json` and update with your actual projects:
 ### Project Properties
 
 | Property | Description |
-|----------|-------------|
+| -------- | ----------- |
 | `id` | Unique identifier (lowercase, no spaces) |
 | `name` | Display name for the project |
 | `description` | Short description (1-2 sentences) |
@@ -109,7 +110,7 @@ this.duration = 8000; // Match the CSS value
 
 ## Project Structure
 
-```
+```txt
 portfolio/
 ├── server.js           # Express server
 ├── package.json        # Dependencies & scripts
@@ -121,10 +122,10 @@ portfolio/
 
 ## Keyboard Shortcuts
 
-| Key | Action |
-|-----|--------|
-| `←` | Previous project |
-| `→` | Next project |
+| Key     | Action              |
+| ------- | ------------------- |
+| `←`     | Previous project    |
+| `→`     | Next project        |
 | `Space` | Play/Pause carousel |
 
 ## Tech Stack
