@@ -2,8 +2,6 @@
 
 A stunning carousel-based portfolio showcasing projects with live demos and source code side-by-side.
 
-![Portfolio Preview](https://via.placeholder.com/800x400/0a0a0b/00ff88?text=Portfolio+Preview)
-
 ## Features
 
 - 🎠 **Auto-rotating carousel** - Projects cycle automatically with 8-second intervals
