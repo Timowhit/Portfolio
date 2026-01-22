@@ -9,7 +9,7 @@ const SITE_DATA = {
       tags: ["Python", "Flask", "Trading", "API"],
       type: "python",
       repoUrl: "https://github.com/timowhit/Trading-Bot",
-      liveUrl: null, // Flask app - no static preview
+      liveUrl: "https://github.com/timowhit/Trading-Bot",
       // Note: Using Stock_market branch (the default branch for this repo)
       sourceFile: "https://raw.githubusercontent.com/timowhit/Trading-Bot/Stock_market/Trading_Bot_Dashboard.py",
       color: "#00ff88"
@@ -21,7 +21,7 @@ const SITE_DATA = {
       type: "web",
       repoUrl: "https://github.com/timowhit/wdd131",
       liveUrl: "https://timowhit.github.io/wdd131",
-      sourceFile: "https://raw.githubusercontent.com/timowhit/wdd131/main/scripts/getdates.js",
+      sourceFile: "https://raw.githubusercontent.com/timowhit/wdd131/index.html",
       color: "#00d4ff"
     },
     {
